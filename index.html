@@ -125,23 +125,29 @@
 
     </style>
 
-    <script src="deps/jquery.js"></script>
-    <script src="deps/jquery-mousewheel.js"></script>
+    <script src="deps/zepto.js"></script>
     <script src="antiscroll.js"></script>
 
     <script>
-
+      $ = captain.Zepto
       $(function () {
-        scroller = $('.box-wrap').antiscroll().data('antiscroll');
+        scroller = $('.box-wrap').antiscroll();
+        $("h1").mouseover(function() {
+          console.log("wat");
+        });
+        
+        $("h1").mouseout(function() {
+          console.log("fu");
+        });
 
         $("#addRow").click(function() {                    
-          $('.box-wrap tr:last').clone().appendTo('.box-wrap table');
+          $("<p>blalllllllla sdf jksd fkjsd jkf sdkf kjsdf</p>").appendTo('.box-wrap table');
           $("#rows b").text($(".box-wrap tr").length);
           scroller.refresh();
         });
 
         $("#removeRow").click(function() {
-          $('.box-wrap tr:last').remove();
+          $('.box-wrap tr').last().remove();
           $("#rows b").text($(".box-wrap tr").length);
           scroller.refresh();
         });
@@ -172,6 +178,116 @@
     <div id="page">
       <h1>Antiscroll</h1>
       <p>os x lion style cross-browser native scrolling on the web that gets out of the way.</p>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
+      <ul id="features">
+        <li>supports mousewheels, trackpads, other input devices natively.</li>
+        <li>total size is <b>1kb</b> minified and gzipped.</li>
+        <li>doesn't magically autowrap your elements with divs (manual wrapping is necessary, please see index.html demo).</li>
+        <li>fade in/out controlled with CSS3 animations.</li>
+        <li>shows scrollbars upon hovering.</li>
+        <li>scrollbars are draggable.</li>
+        <li>size of container can be dynamically adjusted and scrollbars will adapt.</li>
+        <li>supports IE7+, Firefox 3+, Chrome, Safari, Opera</li>
+      </ul>
       <ul id="features">
         <li>supports mousewheels, trackpads, other input devices natively.</li>
         <li>total size is <b>1kb</b> minified and gzipped.</li>
