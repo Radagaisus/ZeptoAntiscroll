@@ -6,6 +6,7 @@ This is a port of Antiscroll, written in Coffee Script, to work with Zepto. This
 ## Caveats:
 - `jQuery.mousewheel` isn't supported yet. (planned)
 - There are no options.
+- no `innerWidth()`
 - You can only use this on one elemnt, and there's no chaining afterwards, since there's no `.data() support.`
 
 This is for a personal project, but it might helped someone out there.

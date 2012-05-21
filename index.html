@@ -129,16 +129,8 @@
     <script src="antiscroll.js"></script>
 
     <script>
-      $ = captain.Zepto
       $(function () {
         scroller = $('.box-wrap').antiscroll();
-        $("h1").mouseover(function() {
-          console.log("wat");
-        });
-        
-        $("h1").mouseout(function() {
-          console.log("fu");
-        });
 
         $("#addRow").click(function() {                    
           $("<p>blalllllllla sdf jksd fkjsd jkf sdkf kjsdf</p>").appendTo('.box-wrap table');

@@ -13,8 +13,8 @@
 			@padding = @o.padding || 2
 			
 			@inner = @el.find('.antiscroll-inner').css
-				width: "+=#{scrollbarSize()}" # fuck
-				height: "+=#{scrollbarSize()}" # fuck
+				width: "+=#{scrollbarSize()}"
+				height: "+=#{scrollbarSize()}"
 			
 			@refresh()
 		

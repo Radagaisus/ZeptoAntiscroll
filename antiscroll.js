@@ -273,6 +273,6 @@
       return Antiscroll;
 
     }).call(this);
-  })(captain.Zepto);
+  })(Zepto);
 
 }).call(this);
