@@ -1,7 +1,27 @@
 ( ($) ->
+	###
+	scrollbarSize = ->
+		unless @size
+			div = $ """
+				<div style="width:50px;height:50px;overflow:hidden;
+				position:absolute;top:-200px;left:-200px;"><div style="height:100px;">
+				</div>
+			"""
+		
+			$('body').append div
+		
+			w1 = $('div', div).width() # fuck
+			div.css 'overflow-y', 'scroll'
+			w2 = $('div', div).height() # fuck
+			$(div).remove()
+			@size = w1 - w2
+		return @size
+	###
+	
 	$.fn.antiscroll = (o) ->
 		anti = null
 		@each ->
+			$(this).find('.antiscroll-scrollbar').remove()
 			anti = new Antiscroll this, o
 		return anti
 	
@@ -12,9 +32,10 @@
 			@y = @o.y isnt false
 			@padding = @o.padding || 2
 			
-			@inner = @el.find('.antiscroll-inner').css
-				width: "+=#{scrollbarSize()}"
-				height: "+=#{scrollbarSize()}"
+			@inner = @el.find('.antiscroll-inner')
+			@inner.css
+				width: @inner.width() + 18
+				height: @inner.height() + 18
 			
 			@refresh()
 		
@@ -53,6 +74,7 @@
 				@enter = false
 				@shown = false
 				
+				###
 				types = ['DOMMouseScroll', 'mousewheel']
 				handler = (e) =>
 					orgEvent = e or window.event
@@ -89,14 +111,13 @@
 
 					#console.log args
 					@mousewheel args
-
+					
 				if window.addEventListener
 					for t in types
 						window.addEventListener t, handler, false
 				else
 					window.onmousewheel = handler
-				
-				
+				###
 				@pane.el.mouseover =>
 					@enter = true
 					@show()
@@ -117,7 +138,7 @@
 					
 					$(document)
 						.mousemove(@mousemove)
-						. mouseup =>
+						.mouseup =>
 							@dragging = false
 							document.onselectstart = null
 							$(document).unbind 'mousemove', @mousemove
@@ -215,21 +236,4 @@
 				      * y / (trackHeight - barHeight)`
 				
 				return 0
-		
-		scrollbarSize = ->
-			unless @size
-				div = $ """
-					<div style="width:50px;height:50px;overflow:hidden;
-					position:absolute;top:-200px;left:-200px;"><div style="height:100px;">
-					</div>
-				"""
-				
-				$('body').append div
-				
-				w1 = $('div', div).width() # fuck
-				div.css 'overflow-y', 'scroll'
-				w2 = $('div', div).width() # fuck
-				$(div).remove()
-				@size = w1 - w2
-			return @size
-)(Zepto)
+)($)
